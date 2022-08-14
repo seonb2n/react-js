@@ -20,3 +20,15 @@ passwordInput.onfocus = function (e) {
 passwordInput.onblur = function (e) {
     passwordInputFocusLine.classList.add(HIDDEN_CLASSNAME);
 }
+
+function onShowPassword(event) {
+    if (passwordInput.getAttribute("type") === "password") {
+        passwordInput.setAttribute("type", "text");
+        password_show_btn.src = "src/ic_task_look_on.png";
+    } else {
+        passwordInput.setAttribute("type", "password");
+        password_show_btn.src = "src/ic_task_look_off.png";
+    }
+}
+
+password_show_btn.addEventListener("click", onShowPassword);
