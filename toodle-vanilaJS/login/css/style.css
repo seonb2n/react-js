@@ -64,14 +64,12 @@
 .login_check_text {
     position: relative;
     margin-top: 20px;
-    visibility: visible;
     color: orange;
 }
 
-.login_check_text p{
+.login_check_text p {
     padding-top: 10px;
     position: relative;
-    visibility: visible;
     color: orange;
     font-size: 13px;
 }
@@ -81,6 +79,8 @@
     z-index: 1;
     margin-top: 30px;
     height: 52px;
+    box-shadow: none;
+    border: none;
 }
 
 .login_form_submit_button_text {
@@ -95,10 +95,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 14px;
+    letter-spacing: -2px;
 }
 
 .login_form_submit_button img {
     width: 20px;
+    margin-right: 10px;
     height: 20px;
     float: left;
 }
@@ -106,6 +109,66 @@
 .login_form_submit_button input {
     width: 100%;
     height: 100%;
+    box-shadow: none;
+    outline: none;
+    border: 2px solid #ededf2;
     border-radius: 26px;
     background: white;
+
+}
+
+
+.findAndJoinBtnWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 18px;
+}
+
+.findPasswordBtn {
+    float: left;
+    font-size: 14px;
+    color: #888c99;
+}
+
+.findAndJoinBtnWrapper hr {
+    float: left;
+    height: 10px;
+    width: .1vh;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-width: 0;
+    background-color: #d9dbe0;
+}
+
+.joinWithEmailBtn {
+    font-size: 14px;
+}
+
+.socialLoginText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 45px;
+    font-size: 13px;
+    color: #888c99;
+}
+
+.socialLoginBtnWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 11px;
+}
+
+.googleLoginBtn {
+    float: left;
+}
+
+.naverLoginBtn {
+    float: left;
+    margin-left: 14px;
+    margin-right: 14px;
 }
