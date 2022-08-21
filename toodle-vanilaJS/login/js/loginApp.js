@@ -3,7 +3,8 @@ const passwordInput = document.querySelector(".login_password_input");
 const emailInputFocusLine = document.querySelector(".login_email_focus_line");
 const passwordInputFocusLine = document.querySelector(".login_password_focus_line");
 const passwordShowBtn = document.querySelector(".login_password img");
-const loginBtn = document.querySelector(".login_form_submit_button");
+const loginBtn = document.querySelector(".reset_form_submit_button");
+const findPasswordBtn = document.querySelector(".findPasswordBtn");
 const HIDDEN_CLASSNAME = "hidden";
 
 emailInput.onfocus = function (e) {
@@ -33,11 +34,11 @@ function onShowPassword() {
 }
 
 function loginFail() {
-    const loginFailTxt = document.querySelector(".login_check_text");
+    const loginFailTxt = document.querySelector(".reset_info_text");
     loginFailTxt.classList.remove(HIDDEN_CLASSNAME);
     const btnInput = loginBtn.querySelector("input");
     btnInput.style.border = '3px solid #000000';
-    const btnImg = loginBtn.querySelector(".login_form_submit_button_text img");
+    const btnImg = loginBtn.querySelector(".reset_form_submit_button_text img");
     btnImg.src = "src/ic_check_orange.png";
 }
 
@@ -75,5 +76,12 @@ function onLoginBtnClicked(e) {
         });
 }
 
+function onFindPassword() {
+    window.location.href = '../login/passwordReset.html';
+}
+
+
+
 passwordShowBtn.addEventListener("click", onShowPassword);
 loginBtn.addEventListener("click", onLoginBtnClicked);
+findPasswordBtn.addEventListener("click", onFindPassword);
