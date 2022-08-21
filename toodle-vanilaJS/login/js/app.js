@@ -32,6 +32,15 @@ function onShowPassword() {
     }
 }
 
+function loginFail() {
+    const loginFailTxt = document.querySelector(".login_check_text");
+    loginFailTxt.classList.remove(HIDDEN_CLASSNAME);
+    const btnInput = loginBtn.querySelector("input");
+    btnInput.style.border = '3px solid #000000';
+    const btnImg = loginBtn.querySelector(".login_form_submit_button_text img");
+    btnImg.src = "src/ic_check_orange.png";
+}
+
 function onLoginBtnClicked(e) {
     e.preventDefault();
     const userEmail = emailInput.value;
@@ -50,13 +59,20 @@ function onLoginBtnClicked(e) {
         }),
     }).then((response) => {
         console.log(response);
+        if(response.status !== 200) {
+            throw new Error();
+        }
         return response.json();
     }).then((data) => {
-        console.log(data);
-        const userName = data;
+        // console.log(data.data);
+            var userName = data.data['userNickName'];
+            console.log(userName);
+            alert(userName + "님 로그인 성공");
     })
-        .catch(error => console.log(error));
-
+        .catch(error => {
+            console.log(error)
+            loginFail()
+        });
 }
 
 passwordShowBtn.addEventListener("click", onShowPassword);
