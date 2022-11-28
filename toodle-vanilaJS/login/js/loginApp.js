@@ -46,7 +46,7 @@ function onLoginBtnClicked(e) {
     e.preventDefault();
     const userEmail = emailInput.value;
     const userPassword = passwordInput.value;
-    fetch("http://192.168.35.157:8080/api/v1/users/login", {
+    fetch("http://ec2-43-200-206-50.ap-northeast-2.compute.amazonaws.com:8080/api/v1/users/login", {
         method: "POST",
         mode: 'cors',
         cache: 'no-cache',
@@ -79,8 +79,6 @@ function onLoginBtnClicked(e) {
 function onFindPassword() {
     window.location.href = '../login/passwordReset.html';
 }
-
-
 
 passwordShowBtn.addEventListener("click", onShowPassword);
 loginBtn.addEventListener("click", onLoginBtnClicked);
