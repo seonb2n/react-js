@@ -5,27 +5,18 @@ import Parent from "./useContext/parent";
 import ReducerCounter from "./useReducer/useReducerCounter";
 import GetAverage from "./useMemo/useMemoAverage";
 import UseRefButton from "./useRef/useRefButton";
+import {useState} from "react";
+import UseReducerCounter from "./useReducer/useReducerCounter";
 
 function App() {
+
+    const [real, setReal] = useState(true);
+
   return (
     <div className="App">
         <div>
-            <UseStateCounter/>
-        </div>
-        <div>
+            {real ? <UseStateCounter /> : <UseReducerCounter/>}
             <UseEffectSearchBox />
-        </div>
-        <div>
-            <Parent/>
-        </div>
-        <div>
-            <ReducerCounter />
-        </div>
-        <div>
-            <GetAverage />
-        </div>
-        <div>
-            <UseRefButton />
         </div>
     </div>
   );
